@@ -3,161 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>The Classes - Educational Institute</title>
     <style>
-        /* CSS for a modern, minimalistic black and gold theme */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
-        /* Using a single font-family for a clean, cohesive look. 
-           'Montserrat' is a great choice for modern aesthetics. */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
-
-        /* Universal box-sizing for consistent layout behavior */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        /* Body styling to set the overall theme */
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #000000; /* Deep black background */
-            color: #FFFFFF; /* White text for contrast, a classic minimalist choice */
-            line-height: 1.6;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: #000;
+            color: #fff;
             min-height: 100vh;
+            padding: 0;
+            margin: 0;
         }
 
-        /* Main container for the portfolio content */
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background-color: #1a1a1a; /* A slightly lighter black for depth */
-            border: 1px solid #FFD700; /* Gold border for a touch of luxury */
-            padding: 3rem;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); /* Subtle gold glow effect */
-            text-align: center;
+        /* Banner Styles */
+        .banner {
             position: relative;
+            width: 100vw;
+            min-height: 80vh;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(120deg, #0b1536 0%, #194e8a 100%);
         }
 
-        /* Section for the main heading with a bold, luxurious font */
-        .header {
-            margin-bottom: 2rem;
-        }
-
-        .header h1 {
-            font-family: 'Playfair Display', serif; /* A beautiful serif font for a bold, luxurious feel */
-            font-size: 3rem;
-            font-weight: 700;
-            color: #FFD700; /* Bold gold color */
-            text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Profile picture styling */
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Makes the image circular */
-            object-fit: cover; /* Ensures the image covers the area without distortion */
-            border: 3px solid #FFD700; /* Gold border */
-            margin: 0 auto 2rem;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Subtle glow */
-        }
-
-        /* 'About Me' section */
-        .about-me {
-            margin-bottom: 2rem;
-        }
-
-        .about-me h2 {
-            font-size: 1.5rem;
-            color: #FFD700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .about-me p {
-            font-size: 1rem;
-            color: #CCCCCC; /* Light grey text for readability */
-        }
-
-        /* Personal quote section */
-        .quote {
-            padding: 2rem;
-            background-color: #0d0d0d; /* A darker black for the quote section to stand out */
-            border-left: 3px solid #FFD700; /* Gold accent line */
-        }
-
-        .quote p {
-            font-style: italic;
-            font-size: 1.1rem;
-            color: #FFD700; /* Gold text for the quote itself */
-            position: relative;
-            padding: 0 1rem;
-        }
-
-        .quote p::before, .quote p::after {
-            content: '"'; /* Adds quotation marks */
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            line-height: 0;
-            color: #FFD700;
+        .banner::before {
+            content: "";
             position: absolute;
+            inset: 0;
+            background: url('https://assets-global.website-files.com/63eea6d8b32ece01f1e46e1b/63efc0c981b1e44c1440d3c4_network-vectors.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             opacity: 0.7;
+            z-index: 1;
         }
 
-        .quote p::before {
-            top: 10px;
+        .banner::after {
+            content: "";
+            position: absolute;
+            top: -20%;
+            right: -25vw;
+            width: 90vw;
+            height: 120vh;
+            background: radial-gradient(ellipse at center, rgba(0,220,255,0.5) 0%, rgba(0,120,255,0.35) 60%, rgba(0,110,255,0.15) 100%);
+            border-radius: 70% 80% 60% 80% / 70% 80% 40% 80%;
+            z-index: 2;
+            pointer-events: none;
+            mix-blend-mode: lighten;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 10;
+            margin-left: 7vw;
+            color: #fff;
+            max-width: 600px;
+        }
+
+        .banner-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 5px 30px rgba(0,0,0,0.2);
+        }
+
+        .banner-content .subtitle {
+            font-size: 2rem;
+            color: #e3e7ff;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+        }
+
+        .banner-content .blue-bar {
+            width: 70px;
+            height: 5px;
+            background: #19d0ff;
+            border-radius: 10px;
+            margin: 1.2rem 0 2rem 0;
+        }
+
+        .banner-content .desc {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 2.3rem;
+            font-weight: 500;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 0;
             left: 0;
+            width: 100%;
+            padding: 2rem 5vw 0 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 20;
+            background: transparent;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            color: #19d0ff;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        .navbar-menu {
+            display: flex;
+            gap: 2.5rem;
+        }
+        .navbar-menu a {
+            color: #e3e7ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .navbar-menu a:hover {
+            color: #19d0ff;
+        }
+        .navbar-button {
+            margin-left: 2rem;
+            padding: 0.7em 1.7em;
+            background: #19d0ff;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .navbar-button:hover {
+            background: #0fa6c1;
         }
 
-        .quote p::after {
-            bottom: -10px;
-            right: 0;
+        /* Section Styles */
+        section {
+            padding: 5rem 10vw;
+            background: #121d34;
+        }
+        section:nth-child(even) {
+            background: #17284a;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: #19d0ff;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2rem;
+        }
+        .about-content, .courses-list, .faculty-list, .admission-content, .contact-content {
+            font-size: 1.2rem;
+            color: #e3e7ff;
         }
 
-        /* A subtle animation for an elegant touch */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Courses grid */
+        .courses-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .course-card {
+            background: #1c2948;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(25,208,255,0.07);
+            border-left: 5px solid #19d0ff;
+        }
+        .course-card h3 {
+            color: #19d0ff;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
         }
 
-        .container {
-            animation: fadeIn 1s ease-out;
+        /* Faculty grid */
+        .faculty-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 2rem;
+        }
+        .faculty-card {
+            background: #1c2948;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(25,208,255,0.07);
+        }
+        .faculty-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid #19d0ff;
+        }
+        .faculty-card h4 {
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .faculty-card p {
+            color: #e3e7ff;
+            font-size: 1rem;
+            text-align: center;
         }
 
+        /* Contact form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 400px;
+        }
+        .contact-form input, 
+        .contact-form textarea {
+            padding: 0.8rem 1rem;
+            border-radius: 5px;
+            border: none;
+            background: #29416b;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .contact-form input::placeholder, 
+        .contact-form textarea::placeholder {
+            color: #b8d9f2;
+        }
+        .contact-form button {
+            background: #19d0ff;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: #0fa6c1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .banner-content h1 { font-size: 2.5rem; }
+            .banner-content .subtitle { font-size: 1.2rem; }
+            .banner-content .desc { font-size: 1rem; }
+            .banner-content { max-width: 95vw; margin-left: 2vw; }
+        }
+        @media (max-width: 600px) {
+            .banner { flex-direction: column; align-items: flex-start; min-height: 60vh;}
+            .banner-content { margin: 4vh 5vw; max-width: 98vw;}
+            .navbar { flex-direction: column; gap:1.5rem; padding: 1rem 3vw 0 3vw;}
+            section { padding: 4rem 2vw; }
+        }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <header class="header">
-            <h1>[Your Name]</h1>
-        </header>
-
-        <section class="profile">
-            <img src="https://via.placeholder.com/150/000000/FFD700?text=JP" alt="A professional headshot of [Your Name]" class="profile-pic">
-        </section>
-
-        <section class="about-me">
-            <h2>About Me</h2>
-            <p>
-                I am a passionate and dedicated web developer with a keen eye for design and a love for creating beautiful, functional websites. I specialize in modern front-end technologies and am always eager to learn and grow. My goal is to build digital experiences that are not only efficient but also aesthetically pleasing and intuitive for the user.
-            </p>
-        </section>
-
-        <section class="quote">
-            <p>
-                "The only way to do great work is to love what you do."
-            </p>
-        </section>
+    <div class="banner">
+        <nav class="navbar">
+            <div class="navbar-logo">The Classes</div>
+            <div class="navbar-menu">
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#faculty">Faculty</a>
+                <a href="#admissions">Admissions</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="navbar-button">Apply Now</button>
+        </nav>
+        <div class="banner-content">
+            <h1>The Classes</h1>
+            <div class="subtitle">Empowering Education, Shaping Futures</div>
+            <div class="blue-bar"></div>
+            <div class="desc">Your Pathway to Academic Excellence</div>
+        </div>
     </div>
 
+    <section id="about">
+        <div class="section-title">About Us</div>
+        <div class="about-content">
+            The Classes is a premier educational institute dedicated to delivering high-quality learning experiences. Our mission is to foster academic excellence and empower students with the skills and knowledge needed to excel in their studies and beyond.
+        </div>
+    </section>
+
+    <section id="courses">
+        <div class="section-title">Our Courses</div>
+        <div class="courses-list">
+            <div class="course-card">
+                <h3>Matriculation (9th & 10th)</h3>
+                Comprehensive coaching in all major subjects with experienced faculty.
+            </div>
+            <div class="course-card">
+                <h3>Intermediate (FSc, ICS, ICom)</h3>
+                Focused classes for pre-medical, pre-engineering, computer, and commerce groups.
+            </div>
+            <div class="course-card">
+                <h3>Entry Test Prep</h3>
+                Intensive preparation for MDCAT, ECAT, and other university entrance tests.
+            </div>
+            <div class="course-card">
+                <h3>Language & Skills</h3>
+                English language, computer skills, and personal development workshops.
+            </div>
+        </div>
+    </section>
+
+    <section id="faculty">
+        <div class="section-title">Our Faculty</div>
+        <div class="faculty-list">
+            <div class="faculty-card">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Teacher 1" class="faculty-img" />
+                <h4>Sir Ahmed Khan</h4>
+                <p>Physics & Mathematics Expert</p>
+            </div>
+            <div class="faculty-card">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Teacher 2" class="faculty-img" />
+                <h4>Ms. Sara Ali</h4>
+                <p>Chemistry Specialist</p>
+            </div>
+            <div class="faculty-card">
+                <img src="https://randomuser.me/api/portraits/men/58.jpg" alt="Teacher 3" class="faculty-img" />
+                <h4>Mr. Bilal Hussain</h4>
+                <p>English Language Trainer</p>
+            </div>
+            <div class="faculty-card">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Teacher 4" class="faculty-img" />
+                <h4>Mrs. Fatima Noor</h4>
+                <p>Biology & Science Lecturer</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="admissions">
+        <div class="section-title">Admissions</div>
+        <div class="admission-content">
+            Admissions are open for all classes. Join The Classes to experience a transformative learning journey. Our admission process is simple and student-friendly. For detailed information, visit our campus or contact us through the form below.
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">Contact Us</div>
+        <div class="contact-content">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 </body>
 </html>
